@@ -239,7 +239,7 @@ const CGFloat JWFoldersOpeningDuration = 0.4f;
     [move setValue:@"close" forKey:@"animationKey"];
     [move setDelegate:self];
     [move setTimingFunction:timingFunction];
-    move.fromValue = [NSValue valueWithCGPoint:[[(up) ? self.top.layer : self.bottom.layer presentationLayer] position]];
+    move.fromValue = [NSValue valueWithCGPoint:[(CALayer *)[(up) ? self.top.layer : self.bottom.layer presentationLayer] position]];
     move.toValue = [NSValue valueWithCGPoint:_folderPoint];
     move.duration = JWFoldersOpeningDuration;
     [up ? self.top.layer : self.bottom.layer addAnimation:move forKey:nil];
